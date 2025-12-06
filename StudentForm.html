@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Registration</title>
+    <script>
+      function validateForm() {
+        let name = document.getElementById("name").value;
+        let mobile = document.getElementById("mobile").value;
+        let password = document.getElementById("password").value;
+        let conPassword = document.getElementById("conPassword").value;
+        if (name == "" || mobile == "" || password == "" || conPassword == "") {
+          alert("All fields are required!!");
+        } else if (mobile.length != 10) {
+          alert("Mobile number must be of 10 digits only!!");
+          return false;
+        } else if (password != conPassword) {
+          alert("Password do not match!!");
+          return false;
+        } else {
+          alert("Form submitted successfully.");
+          return true;
+        }
+      }
+    </script>
+    <!-- Conditions:
+     1) All field should be filled.
+     2) Mobile number should be 10 digits.
+     3) Password and confirm password should be same.
+     4) If everything is correct, then form should be submitted successfully. -->
+  </head>
+  <body>
+    <h1>Student Registration Form</h1>
+    <form onsubmit="return validateForm()">
+      <label for="name"> <b>Name: </b> </label>
+      <br />
+      <input type="text" id="name" />
+      <br />
+      <label for="number"><b> Mobile Number: </b></label>
+      <br />
+      <input type="text" id="mobile" />
+      <br />
+      <label for="password"><b> Password: </b></label>
+      <br />
+      <input type="password" id="password" />
+      <br />
+      <label for="text"><b>Confirm Password: </b></label>
+      <br />
+
+      <input type="password" id="conPassword" />
+      <br />
+      <br />
+      <button>Submit</button>
+      <br />
+    </form>
+  </body>
+</html>
